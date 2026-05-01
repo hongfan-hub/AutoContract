@@ -1,0 +1,363 @@
+{
+  "repo": "demo-backend",
+  "commit": {
+    "sha": "3a40c082f8f6f577e9c2928abc8fc6c5a8f8066a",
+    "author": "Codex Demo",
+    "authored_at": "2026-05-02T00:43:35+08:00",
+    "subject": "chore: ignore pycache"
+  },
+  "changed_files": [
+    {
+      "path": ".gitignore",
+      "status": "A",
+      "additions": 2,
+      "deletions": 0,
+      "patch": "diff --git a/.gitignore b/.gitignore\nnew file mode 100644\nindex 0000000..43ae0e2\n--- /dev/null\n+++ b/.gitignore\n@@ -0,0 +1,2 @@\n+__pycache__/\n+*.py[cod]"
+    },
+    {
+      "path": "app/__pycache__/__init__.cpython-314.pyc",
+      "status": "D",
+      "additions": 0,
+      "deletions": 0,
+      "patch": "diff --git a/app/__pycache__/__init__.cpython-314.pyc b/app/__pycache__/__init__.cpython-314.pyc\ndeleted file mode 100644\nindex 1f5bd28..0000000\nBinary files a/app/__pycache__/__init__.cpython-314.pyc and /dev/null differ"
+    },
+    {
+      "path": "app/__pycache__/main.cpython-314.pyc",
+      "status": "D",
+      "additions": 0,
+      "deletions": 0,
+      "patch": "diff --git a/app/__pycache__/main.cpython-314.pyc b/app/__pycache__/main.cpython-314.pyc\ndeleted file mode 100644\nindex cb92c1e..0000000\nBinary files a/app/__pycache__/main.cpython-314.pyc and /dev/null differ"
+    }
+  ],
+  "routes": [
+    {
+      "path": "/health",
+      "methods": [
+        "GET"
+      ],
+      "handler": "health",
+      "request_model": null,
+      "response_model": "HealthResponse",
+      "tags": [
+        "system"
+      ],
+      "summary": "Health check",
+      "source_file": "C:\\Users\\Eldridge\\Documents\\Codex\\2026-05-02\\api-agent-agent-agent-commit-agent\\examples\\demo_backend\\app\\main.py",
+      "line_number": 34,
+      "request_schema": null,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "version": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "version"
+        ]
+      },
+      "path_params": []
+    },
+    {
+      "path": "/users",
+      "methods": [
+        "POST"
+      ],
+      "handler": "create_user",
+      "request_model": "CreateUserRequest",
+      "response_model": "UserResponse",
+      "tags": [
+        "users"
+      ],
+      "summary": "Create user",
+      "source_file": "C:\\Users\\Eldridge\\Documents\\Codex\\2026-05-02\\api-agent-agent-agent-commit-agent\\examples\\demo_backend\\app\\main.py",
+      "line_number": 39,
+      "request_schema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "age": {
+            "type": "integer",
+            "default": 18
+          }
+        },
+        "required": [
+          "name",
+          "email"
+        ]
+      },
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "email",
+          "created_at"
+        ]
+      },
+      "path_params": []
+    },
+    {
+      "path": "/users/{user_id}",
+      "methods": [
+        "GET"
+      ],
+      "handler": "get_user",
+      "request_model": null,
+      "response_model": "UserResponse",
+      "tags": [
+        "users"
+      ],
+      "summary": "Get user",
+      "source_file": "C:\\Users\\Eldridge\\Documents\\Codex\\2026-05-02\\api-agent-agent-agent-commit-agent\\examples\\demo_backend\\app\\main.py",
+      "line_number": 52,
+      "request_schema": null,
+      "response_schema": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "email",
+          "created_at"
+        ]
+      },
+      "path_params": [
+        {
+          "name": "user_id",
+          "schema": {
+            "type": "integer"
+          },
+          "required": true
+        }
+      ]
+    }
+  ],
+  "openapi": {
+    "openapi": "3.1.0",
+    "info": {
+      "title": "Demo Backend API",
+      "version": "3a40c082f8f6",
+      "description": "Auto-reconstructed spec for repo demo-backend from commit 3a40c082f8f6f577e9c2928abc8fc6c5a8f8066a."
+    },
+    "servers": [],
+    "paths": {
+      "/health": {
+        "get": {
+          "summary": "Health check",
+          "operationId": "health",
+          "tags": [
+            "system"
+          ],
+          "x-source-file": "C:\\Users\\Eldridge\\Documents\\Codex\\2026-05-02\\api-agent-agent-agent-commit-agent\\examples\\demo_backend\\app\\main.py",
+          "x-source-line": 34,
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "Successful Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "status": {
+                        "type": "string"
+                      },
+                      "version": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "status",
+                      "version"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/users": {
+        "post": {
+          "summary": "Create user",
+          "operationId": "create_user",
+          "tags": [
+            "users"
+          ],
+          "x-source-file": "C:\\Users\\Eldridge\\Documents\\Codex\\2026-05-02\\api-agent-agent-agent-commit-agent\\examples\\demo_backend\\app\\main.py",
+          "x-source-line": 39,
+          "parameters": [],
+          "responses": {
+            "200": {
+              "description": "Successful Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "type": "string",
+                        "format": "email"
+                      },
+                      "created_at": {
+                        "type": "string",
+                        "format": "date-time"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "name",
+                      "email",
+                      "created_at"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string",
+                      "format": "email"
+                    },
+                    "age": {
+                      "type": "integer",
+                      "default": 18
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "email"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "/users/{user_id}": {
+        "get": {
+          "summary": "Get user",
+          "operationId": "get_user",
+          "tags": [
+            "users"
+          ],
+          "x-source-file": "C:\\Users\\Eldridge\\Documents\\Codex\\2026-05-02\\api-agent-agent-agent-commit-agent\\examples\\demo_backend\\app\\main.py",
+          "x-source-line": 52,
+          "parameters": [
+            {
+              "name": "user_id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "type": "string",
+                        "format": "email"
+                      },
+                      "created_at": {
+                        "type": "string",
+                        "format": "date-time"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "name",
+                      "email",
+                      "created_at"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {}
+    },
+    "x-generated-from": {
+      "repo": "demo-backend",
+      "commit_sha": "3a40c082f8f6f577e9c2928abc8fc6c5a8f8066a",
+      "commit_author": "Codex Demo",
+      "commit_subject": "chore: ignore pycache",
+      "authored_at": "2026-05-02T00:43:35+08:00"
+    }
+  },
+  "generated_at": "2026-05-01T16:43:44.894613+00:00"
+}

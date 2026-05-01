@@ -1,0 +1,21 @@
+[app]
+bind_host = "127.0.0.1"
+bind_port = 8099
+artifact_dir = "./artifacts"
+database_path = "./data/api_guard.db"
+scheduler_enabled = true
+default_poll_interval_seconds = 60
+max_cases_per_run = 20
+request_timeout_seconds = 15
+
+[[repos]]
+name = "demo-backend"
+path = "./examples/demo_backend"
+test_base_url = "http://127.0.0.1:8001"
+openapi_title = "Demo Backend API"
+api_management_url = ""
+api_management_method = "PUT"
+poll_interval_seconds = 30
+auth_header_name = ""
+auth_header_value = ""
+

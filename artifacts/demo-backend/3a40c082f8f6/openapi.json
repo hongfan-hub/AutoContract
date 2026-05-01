@@ -1,0 +1,185 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Demo Backend API",
+    "version": "3a40c082f8f6",
+    "description": "Auto-reconstructed spec for repo demo-backend from commit 3a40c082f8f6f577e9c2928abc8fc6c5a8f8066a."
+  },
+  "servers": [],
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Health check",
+        "operationId": "health",
+        "tags": [
+          "system"
+        ],
+        "x-source-file": "C:\\Users\\Eldridge\\Documents\\Codex\\2026-05-02\\api-agent-agent-agent-commit-agent\\examples\\demo_backend\\app\\main.py",
+        "x-source-line": 34,
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "version"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users": {
+      "post": {
+        "summary": "Create user",
+        "operationId": "create_user",
+        "tags": [
+          "users"
+        ],
+        "x-source-file": "C:\\Users\\Eldridge\\Documents\\Codex\\2026-05-02\\api-agent-agent-agent-commit-agent\\examples\\demo_backend\\app\\main.py",
+        "x-source-line": 39,
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string",
+                      "format": "email"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "name",
+                    "email",
+                    "created_at"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "age": {
+                    "type": "integer",
+                    "default": 18
+                  }
+                },
+                "required": [
+                  "name",
+                  "email"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}": {
+      "get": {
+        "summary": "Get user",
+        "operationId": "get_user",
+        "tags": [
+          "users"
+        ],
+        "x-source-file": "C:\\Users\\Eldridge\\Documents\\Codex\\2026-05-02\\api-agent-agent-agent-commit-agent\\examples\\demo_backend\\app\\main.py",
+        "x-source-line": 52,
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string",
+                      "format": "email"
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "name",
+                    "email",
+                    "created_at"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  },
+  "x-generated-from": {
+    "repo": "demo-backend",
+    "commit_sha": "3a40c082f8f6f577e9c2928abc8fc6c5a8f8066a",
+    "commit_author": "Codex Demo",
+    "commit_subject": "chore: ignore pycache",
+    "authored_at": "2026-05-02T00:43:35+08:00"
+  }
+}
